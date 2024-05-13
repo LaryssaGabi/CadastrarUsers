@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { User } from "./styler-users/usersList";
 import Excluir from "/src/assets/img/lixeira.svg";
 
@@ -23,7 +23,7 @@ export default function CadastrarUsers({ users, setUsers }) {
           <p>{user.age}</p>
           <p>{user.telefone}</p>
           <button onClick={() => deleteUser(user.id)}>
-            <img src={Excluir} alt="Lixeira" />
+            <img src={Excluir} alt="Lixeira"/>
           </button>
         </User>
       ))}

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Background from "/src/assets/img/cadastroFundo.svg";
+import Background from "/src/assets/img/loginFundo.svg";
 
 export const Container = styled.div`
   background: url("${Background}") no-repeat center center/cover;
@@ -17,12 +17,15 @@ export const Imagem = styled.img`
 
 export const ContainerItens = styled.div`
   background: rgba(255, 255, 255, 0.6);
-  border-radius: 15px; 
+  border-top-right-radius: 15px; 
+  border-top-left-radius: 15px; 
   padding: 30px 36px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  backdrop-filter: blur(45px);
+  height: 100%;
+  min-height: calc(100vh - 170px);
 `
 
 export const Title = styled.h1`
@@ -35,37 +38,10 @@ export const Title = styled.h1`
   margin-bottom: 30px;
 `
 
-export const FormGroup = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-bottom: 20px;
-  width: 100%;
-`
 
-export const Label = styled.label`
-  font-weight: bold;
-  margin-bottom: 5px;
-  color: #fff;
-  padding-left:18px;
-`
-
-export const TyperInput = styled.input`
-  width: 100%;
-  height: 58px;
-  background: rgba(255, 255, 255, 0.25);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 14px;
-  border: none;
-  outline: none;
-  padding-left: 25px;
-  font-style: normal;
-  font-weight: normal;
-  line-height: 28px;
-  color: #fff;
-`
 
 export const Button = styled.button`
+  margin-top: 20px;
   width: 342px;
   height: 74px;
   background: rgba(0, 0, 0, 0.8);
@@ -81,8 +57,9 @@ export const Button = styled.button`
   align-items: center;
   justify-content: center;
   gap: 20px;
-  text-decoration: none;
   transition: all 0.3s ease; /* Adicionando transição */
+  align-self: flex-end;
+  text-decoration: none;
 
   img {
     filter: invert(100%);
@@ -100,3 +77,4 @@ export const Button = styled.button`
     box-shadow: none; /* Remover a sombra quando clicado */
   }
 `
+

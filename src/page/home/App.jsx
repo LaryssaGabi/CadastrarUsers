@@ -1,48 +1,40 @@
 import axios from 'axios';
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
+import { useNavigate } from 'react-router-dom'
 import People from "../../assets/img/puffCadatsro.svg";
 import Setinha from "../../assets/img/setaE.svg";
 import { Container, Imagem, ContainerItens, Title, FormGroup, Label, TyperInput, Button } from "./components/styler-cadastro/usersCasastro";
-import CadastrarUsers from "./components/cadastro-list";
+
+
 
 export default function App() {
   const [users, setUsers] = useState([]);
+  const navigate = useNavigate()
   const nameRef = useRef(null);
   const ageRef = useRef(null);
   const cellRef = useRef(null);
 
-  useEffect(() => {
-    async function fetchUsers() {
-      try {
-        const response = await axios.get("http://localhost:3000/users");
-        setUsers(response.data);
-      } catch (error) {
-        console.error("Erro ao buscar usuários:", error);
-      }
-    }
 
-    fetchUsers();
-  }, []); // Passando um array vazio como segundo argumento para garantir que esta função seja executada apenas uma vez quando o componente for montado
 
   async function addNewUser() {
     const name = nameRef.current.value;
     const age = ageRef.current.value;
     const cell = cellRef.current.value;
-  
+
     if (name && age && cell) {
       const newUser = {
         name: name,
         age: parseInt(age),
         telefone: cell
       };
-  
+
       try {
         // Enviar os dados para o servidor
         const response = await axios.post("http://localhost:3000/users", newUser);
         const createdUser = response.data; // Obter os dados do usuário criado no servidor
         setUsers([...users, createdUser]); // Adicionar o usuário criado à lista de usuários no estado do componente
         console.log("Dados do usuário cadastrado:", createdUser);
-  
+
         // Limpar os campos após adicionar o usuário
         nameRef.current.value = '';
         ageRef.current.value = '';
@@ -51,9 +43,13 @@ export default function App() {
         console.error("Erro ao cadastrar usuário:", error);
       }
     }
+
+       navigate("/usuarios")
   }
 
+
   return (
+
     <Container>
       <Imagem alt="logo-img" src={People} />
 
@@ -76,8 +72,9 @@ export default function App() {
         </FormGroup>
 
         <Button onClick={addNewUser}> Cadastrar <img src={Setinha} alt="Seta" /></Button>
-        {users.length > 0 && <CadastrarUsers users={users} setUsers={setUsers} />}
+
       </ContainerItens>
     </Container>
+
   );
 }
