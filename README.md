@@ -1,8 +1,47 @@
-# React + Vite
+# AgeView
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Descrição:**
+AgeView é uma aplicação web para cadastro e visualização de usuários. Permite adicionar novos usuários com nome, idade e telefone, além de visualizar a lista de usuários cadastrados.
 
-Currently, two official plugins are available:
+### Tecnologias utilizadas:
+- React.js
+- Axios
+- React Router Dom
+- Styled Components
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Instalação:
+
+1. Clone este repositório:
+2. E lone a API : ""
+
+   
+2. A aplicação estará disponível no seu navegador em [http://localhost:3000](http://localhost:3000).
+
+### Estrutura de pastas:
+
+- **src/**
+  - **page/**
+    - **home/**
+      - **App.jsx**: Componente da página inicial.
+      - **components/**
+        - **styler-cadastro/**
+          - **usersCasastro.jsx**: Estilos para os componentes da página de cadastro de usuários.
+      - **assets/**
+        - **img/**: Pasta contendo imagens utilizadas na aplicação.
+    - **users/**
+      - **Users.jsx**: Componente da página de visualização de usuários.
+      - **components/**
+        - **styler-cadastro/**
+          - **usersCasastro.jsx**: Estilos para os componentes da página de cadastro de usuários.
+        - **userList.jsx**: Componente para renderizar a lista de usuários.
+        - **cadastro-list.jsx**: Componente para cadastrar novos usuários.
+
+### Funcionalidades:
+
+- **Cadastro de usuários:** Adicionar novos usuários informando nome, idade e telefone.
+- **Visualização de usuários:** Listar todos os usuários cadastrados com opção de excluir.
+- **Exclusão de usuário:** Remover um usuário da lista.
+
+
+
+
