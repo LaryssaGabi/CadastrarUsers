@@ -12,7 +12,7 @@ AgeView é uma aplicação web para cadastro e visualização de usuários. Perm
 ### Instalação:
 
 1. Clone este repositório:
-2. E lone a API : ""
+2. E Clone a API : https://github.com/LaryssaGabi/UserManagementAPI.git (Para qeu seja salva as informações do usuarios criados)
 
    
 2. A aplicação estará disponível no seu navegador em [http://localhost:3000](http://localhost:3000).
